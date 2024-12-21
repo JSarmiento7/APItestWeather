@@ -81,6 +81,23 @@ test('Check weather using sea coordinates', async () => {
   }
 });
 
+// Edge Case - Expected wrong coordinates for One Call API
+test('Check weather using expected wrong coordinates', async () => {
+  const { baseUrl } = config.baseCalls.oneCall;
+  const { key } = config;
+  const lat = config.coordinates.sea.lat;
+  const lon = "190";  // Invalid longitude
+
+  const url = `${baseUrl}lat=${lat}&lon=${lon}&appid=${key}`;  // Construct the URL using the config
+
+  // Make the API request
+  const response = await fetch(url);
+  const data = await response.json();
+
+  // Check if the error status is returned
+  expect(response.status).toBe(400);
+});
+
 // Edge Case - User input had a typo in city, should return error code
 test('Check weather using city name with typo', async () => {
   const { baseUrl: geocodingBaseUrl } = config.baseCalls.geocoding;
@@ -113,19 +130,4 @@ test('Check weather using city name with typo', async () => {
   }
 });
 
-// Edge Case - Expected wrong coordinates for One Call API
-test('Check weather using expected wrong coordinates', async () => {
-  const { baseUrl } = config.baseCalls.oneCall;
-  const { key } = config;
-  const lat = config.coordinates.sea.lat;
-  const lon = "190";  // Invalid longitude
 
-  const url = `${baseUrl}lat=${lat}&lon=${lon}&appid=${key}`;  // Construct the URL using the config
-
-  // Make the API request
-  const response = await fetch(url);
-  const data = await response.json();
-
-  // Check if the error status is returned
-  expect(response.status).toBe(400);
-});

@@ -79,7 +79,7 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 745,
+                  "duration": 632,
                   "errors": [],
                   "stdout": [
                     {
@@ -88,7 +88,7 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2024-12-21T18:05:47.869Z",
+                  "startTime": "2024-12-21T19:02:37.488Z",
                   "attachments": []
                 }
               ],
@@ -115,7 +115,7 @@
                 {
                   "workerIndex": 0,
                   "status": "passed",
-                  "duration": 107,
+                  "duration": 89,
                   "errors": [],
                   "stdout": [
                     {
@@ -124,7 +124,7 @@
                   ],
                   "stderr": [],
                   "retry": 0,
-                  "startTime": "2024-12-21T18:05:48.626Z",
+                  "startTime": "2024-12-21T19:02:38.129Z",
                   "attachments": []
                 }
               ],
@@ -134,6 +134,38 @@
           "id": "862461b5a5f05288fdfc-e6ca43dfbfe078380e6f",
           "file": "tests/api.test.ts",
           "line": 66,
+          "column": 5
+        },
+        {
+          "title": "Check weather using expected wrong coordinates",
+          "ok": true,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 30000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "status": "passed",
+                  "duration": 67,
+                  "errors": [],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2024-12-21T19:02:38.221Z",
+                  "attachments": []
+                }
+              ],
+              "status": "expected"
+            }
+          ],
+          "id": "862461b5a5f05288fdfc-1505cebd2e826e920509",
+          "file": "tests/api.test.ts",
+          "line": 85,
           "column": 5
         },
         {
@@ -151,10 +183,10 @@
                 {
                   "workerIndex": 0,
                   "status": "failed",
-                  "duration": 174,
+                  "duration": 154,
                   "error": {
                     "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m0\u001b[39m\nReceived:   \u001b[31m0\u001b[39m",
-                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m0\u001b[39m\nReceived:   \u001b[31m0\u001b[39m\n    at D:\\Documents\\PersonalAutomation\\APItest\\tests\\api.test.ts:96:34",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m0\u001b[39m\nReceived:   \u001b[31m0\u001b[39m\n    at D:\\Documents\\PersonalAutomation\\APItest\\tests\\api.test.ts:113:34",
                     "matcherResult": {
                       "message": "\u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m0\u001b[39m\nReceived:   \u001b[31m0\u001b[39m",
                       "pass": false
@@ -162,18 +194,18 @@
                     "location": {
                       "file": "D:\\Documents\\PersonalAutomation\\APItest\\tests\\api.test.ts",
                       "column": 34,
-                      "line": 96
+                      "line": 113
                     },
-                    "snippet": "\u001b[0m \u001b[90m 94 |\u001b[39m     \n \u001b[90m 95 |\u001b[39m     expect(geocodingResponse\u001b[33m.\u001b[39mstatus)\u001b[33m.\u001b[39mtoBe(\u001b[35m200\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 96 |\u001b[39m     expect(geocodingData\u001b[33m.\u001b[39mlength)\u001b[33m.\u001b[39mtoBeGreaterThan(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m  \u001b[90m// Ensure at least one result\u001b[39m\n \u001b[90m    |\u001b[39m                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 97 |\u001b[39m     \u001b[36mconst\u001b[39m { lat\u001b[33m,\u001b[39m lon } \u001b[33m=\u001b[39m geocodingData[\u001b[35m0\u001b[39m]\u001b[33m;\u001b[39m  \u001b[90m// Get lat and lon from the first result\u001b[39m\n \u001b[90m 98 |\u001b[39m\n \u001b[90m 99 |\u001b[39m     \u001b[90m// Step 2: Use the coordinates to call the One Call API\u001b[39m\u001b[0m"
+                    "snippet": "\u001b[0m \u001b[90m 111 |\u001b[39m     \n \u001b[90m 112 |\u001b[39m     expect(geocodingResponse\u001b[33m.\u001b[39mstatus)\u001b[33m.\u001b[39mtoBe(\u001b[35m200\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 113 |\u001b[39m     expect(geocodingData\u001b[33m.\u001b[39mlength)\u001b[33m.\u001b[39mtoBeGreaterThan(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m  \u001b[90m// Ensure at least one result\u001b[39m\n \u001b[90m     |\u001b[39m                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 114 |\u001b[39m     \u001b[36mconst\u001b[39m { lat\u001b[33m,\u001b[39m lon } \u001b[33m=\u001b[39m geocodingData[\u001b[35m0\u001b[39m]\u001b[33m;\u001b[39m  \u001b[90m// Get lat and lon from the first result\u001b[39m\n \u001b[90m 115 |\u001b[39m\n \u001b[90m 116 |\u001b[39m     \u001b[90m// Step 2: Use the coordinates to call the One Call API\u001b[39m\u001b[0m"
                   },
                   "errors": [
                     {
                       "location": {
                         "file": "D:\\Documents\\PersonalAutomation\\APItest\\tests\\api.test.ts",
                         "column": 34,
-                        "line": 96
+                        "line": 113
                       },
-                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m0\u001b[39m\nReceived:   \u001b[31m0\u001b[39m\n\n\u001b[0m \u001b[90m 94 |\u001b[39m     \n \u001b[90m 95 |\u001b[39m     expect(geocodingResponse\u001b[33m.\u001b[39mstatus)\u001b[33m.\u001b[39mtoBe(\u001b[35m200\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 96 |\u001b[39m     expect(geocodingData\u001b[33m.\u001b[39mlength)\u001b[33m.\u001b[39mtoBeGreaterThan(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m  \u001b[90m// Ensure at least one result\u001b[39m\n \u001b[90m    |\u001b[39m                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 97 |\u001b[39m     \u001b[36mconst\u001b[39m { lat\u001b[33m,\u001b[39m lon } \u001b[33m=\u001b[39m geocodingData[\u001b[35m0\u001b[39m]\u001b[33m;\u001b[39m  \u001b[90m// Get lat and lon from the first result\u001b[39m\n \u001b[90m 98 |\u001b[39m\n \u001b[90m 99 |\u001b[39m     \u001b[90m// Step 2: Use the coordinates to call the One Call API\u001b[39m\u001b[0m\n\u001b[2m    at D:\\Documents\\PersonalAutomation\\APItest\\tests\\api.test.ts:96:34\u001b[22m"
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m0\u001b[39m\nReceived:   \u001b[31m0\u001b[39m\n\n\u001b[0m \u001b[90m 111 |\u001b[39m     \n \u001b[90m 112 |\u001b[39m     expect(geocodingResponse\u001b[33m.\u001b[39mstatus)\u001b[33m.\u001b[39mtoBe(\u001b[35m200\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 113 |\u001b[39m     expect(geocodingData\u001b[33m.\u001b[39mlength)\u001b[33m.\u001b[39mtoBeGreaterThan(\u001b[35m0\u001b[39m)\u001b[33m;\u001b[39m  \u001b[90m// Ensure at least one result\u001b[39m\n \u001b[90m     |\u001b[39m                                  \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 114 |\u001b[39m     \u001b[36mconst\u001b[39m { lat\u001b[33m,\u001b[39m lon } \u001b[33m=\u001b[39m geocodingData[\u001b[35m0\u001b[39m]\u001b[33m;\u001b[39m  \u001b[90m// Get lat and lon from the first result\u001b[39m\n \u001b[90m 115 |\u001b[39m\n \u001b[90m 116 |\u001b[39m     \u001b[90m// Step 2: Use the coordinates to call the One Call API\u001b[39m\u001b[0m\n\u001b[2m    at D:\\Documents\\PersonalAutomation\\APItest\\tests\\api.test.ts:113:34\u001b[22m"
                     }
                   ],
                   "stdout": [],
@@ -183,12 +215,12 @@
                     }
                   ],
                   "retry": 0,
-                  "startTime": "2024-12-21T18:05:48.736Z",
+                  "startTime": "2024-12-21T19:02:38.291Z",
                   "attachments": [],
                   "errorLocation": {
                     "file": "D:\\Documents\\PersonalAutomation\\APItest\\tests\\api.test.ts",
                     "column": 34,
-                    "line": 96
+                    "line": 113
                   }
                 }
               ],
@@ -197,39 +229,7 @@
           ],
           "id": "862461b5a5f05288fdfc-c2fd5961ef8106c2102d",
           "file": "tests/api.test.ts",
-          "line": 85,
-          "column": 5
-        },
-        {
-          "title": "Check weather using expected wrong coordinates",
-          "ok": true,
-          "tags": [],
-          "tests": [
-            {
-              "timeout": 30000,
-              "annotations": [],
-              "expectedStatus": "passed",
-              "projectId": "",
-              "projectName": "",
-              "results": [
-                {
-                  "workerIndex": 1,
-                  "status": "passed",
-                  "duration": 314,
-                  "errors": [],
-                  "stdout": [],
-                  "stderr": [],
-                  "retry": 0,
-                  "startTime": "2024-12-21T18:05:49.570Z",
-                  "attachments": []
-                }
-              ],
-              "status": "expected"
-            }
-          ],
-          "id": "862461b5a5f05288fdfc-1505cebd2e826e920509",
-          "file": "tests/api.test.ts",
-          "line": 117,
+          "line": 102,
           "column": 5
         }
       ]
@@ -237,8 +237,8 @@
   ],
   "errors": [],
   "stats": {
-    "startTime": "2024-12-21T18:05:47.177Z",
-    "duration": 2731.713,
+    "startTime": "2024-12-21T19:02:36.792Z",
+    "duration": 1670.2299999999996,
     "expected": 3,
     "skipped": 0,
     "unexpected": 1,
